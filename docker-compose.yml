@@ -5,11 +5,8 @@ services:
       dockerfile: Dockerfile
     image: postal2-server:latest
     container_name: postal2-server
-    env_file:
-      - .env
     volumes:
-      - steamcmd-login-data:/home/steam/Steam
-      - steamcmd-volume:/home/steam/steamcmd
+      - ./base:/home/dude/game
       - ./overrides:/tmp/postal2-overrides:ro
       - ./Postal2.ini:/tmp/Postal2.ini:ro
     ports:
@@ -17,8 +14,3 @@ services:
       - "7778:7778/udp"
       - "7787:7787/udp"
       - "27900:27900/tcp"
-
-volumes:
-  steamcmd-login-data:
-  steamcmd-volume:
-
