@@ -8,7 +8,6 @@ services:
     env_file:
       - .env
     volumes:
-      - postal2-game-data:/home/steam/postal2
       - steamcmd-login-data:/home/steam/Steam
       - steamcmd-volume:/home/steam/steamcmd
       - ./overrides:/tmp/postal2-overrides:ro
@@ -20,7 +19,6 @@ services:
       - "27900:27900/tcp"
 
 volumes:
-  postal2-game-data:
   steamcmd-login-data:
   steamcmd-volume:
 

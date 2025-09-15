@@ -6,12 +6,11 @@ RUN dpkg --add-architecture i386 && \
     apt-get install -y lib32gcc-s1 wget lib32stdc++6 wine wine32 curl xvfb \
     winbind cabextract unzip p7zip-full
 
-USER steam
-# Create directory structure without downloading yet
-RUN mkdir -p /home/steam/postal2/overrides /home/steam/postal2/System
-WORKDIR /home/steam/postal2
+# Fix permissions for Steam directories
+RUN mkdir -p /home/steam/Steam/steamapps/common && \
+    chown -R steam:steam /home/steam/Steam && \
+    chmod -R 755 /home/steam/Steam
 
-# Copy our entrypoint script
 COPY --chown=steam:steam entrypoint.sh /home/steam/entrypoint.sh
 RUN chmod +x /home/steam/entrypoint.sh
 
