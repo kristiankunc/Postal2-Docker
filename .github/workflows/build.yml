@@ -1,3 +1,5 @@
+name: Build and Push Docker Image
+
 on:
     push:
         branches:
@@ -20,5 +22,5 @@ jobs:
               with:
                   context: .
                   push: true
-                  tags: kristiankunc/postal2-server:latest
+                  tags: kristn1/postal2-server:latest
                   file: ./Dockerfile
