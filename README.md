@@ -2,6 +2,8 @@
 
 This repository contains a Docker setup for running a dedicated server for the game POSTAL 2 using the [NicksCoop](https://www.moddb.com/mods/nickscoop-postal-2-coop)
 
+[![Build and Push Docker Image](https://github.com/kristiankunc/Postal2-Docker/actions/workflows/build.yml/badge.svg)](https://github.com/kristiankunc/Postal2-Docker/actions/workflows/build.yml)
+
 ## Setup
 
 ### POSTAL 2 game files
