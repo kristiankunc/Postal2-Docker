@@ -24,6 +24,8 @@ jobs:
                   push: true
                   tags: kristn1/postal2-server:latest
                   file: ./Dockerfile
+                  cache-from: type=gha
+                  cache-to: type=gha,mode=max
 
             - uses: peter-evans/dockerhub-description@v4
               with:
