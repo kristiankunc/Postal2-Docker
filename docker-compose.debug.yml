@@ -1,0 +1,25 @@
+services:
+  postal2-server-debug:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: postal2-server:debug
+    container_name: postal2-server-debug
+    entrypoint: ["/bin/bash"]
+    command: ["-c", "while true; do sleep 1; done"]  # Keep container running
+    stdin_open: true  # docker run -i
+    tty: true         # docker run -t
+    user: dude
+    env_file:
+      - .env
+    volumes:
+      - postal2-data:/home/dude/game
+      - ./base:/tmp/postal2-base:ro
+    ports:
+      - "7777:7777/udp"
+      - "7778:7778/udp"
+      - "7787:7787/udp"
+      - "27900:27900/tcp"
+
+volumes:
+  postal2-data:

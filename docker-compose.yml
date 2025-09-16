@@ -1,0 +1,20 @@
+services:
+  postal2-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: postal2-server:latest
+    container_name: postal2-server
+    env_file:
+      - .env
+    volumes:
+      - postal2-data:/home/dude/game
+      - ./base:/tmp/postal2-base:ro
+    ports:
+      - "7777:7777/udp"
+      - "7778:7778/udp"
+      - "7787:7787/udp"
+      - "27900:27900/tcp"
+
+volumes:
+  postal2-data:
