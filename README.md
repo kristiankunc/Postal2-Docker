@@ -13,7 +13,7 @@ As of NicksCoop `v1.4.3`, POSTAL 2 Beta `5025` is required. I have only tested w
 ### Pulling the image
 
 ```bash
-docker pull (fill in later) # (only local building for now: $ docker build -t postal2-server:latest -f Dockerfile .
+docker pull kristn1/postal2-server:latest
 ```
 
 ### Preparing the game files
